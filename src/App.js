@@ -75,7 +75,7 @@ const App = () => {
       <ParticipantList participants={participants} />
       <div className="button-panel">
         <button onClick={handleAssignGifts} className="assign">
-          🎁 Assign Gifts
+          🪄 Assign Gifts
         </button>
         <button onClick={handleReset} className="reset">
           🔄 Reset All
@@ -129,15 +129,21 @@ const AssignmentsDisplay = ({ assignments }) => {
   if (!assignments || Object.keys(assignments).length === 0) return null
 
   return (
-    <div className="assignment">
-      <h2>🎁 Assignments</h2>
-      {Object.entries(assignments).map(([giver, receiver]) => (
-        <div key={giver} className="assignment-line">
-          <p>
-            🎅 <strong>{giver}</strong> is gifting 🎁 to <strong>{receiver}</strong>!
-          </p>
-        </div>
-      ))}
+    <div className="assignments-container">
+      <h2>🎁 Secret Santa Matches</h2>
+      <div className="assignment-grid">
+        {Object.entries(assignments).map(([giver, receiver]) => (
+          <div key={giver} className="assignment-card">
+            <span className="giver">
+              🎅 <strong>{giver}</strong>
+            </span>
+            <span className="arrow">➡️</span>
+            <span className="receiver">
+              🎁 <strong>{receiver}</strong>
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
