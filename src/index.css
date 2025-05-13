@@ -1,5 +1,4 @@
-/* index.css */
-
+/* Base styles */
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f9f9f9;
@@ -24,15 +23,29 @@ h1 {
 
 form {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.5rem;
   margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+label {
+  font-weight: 500;
+  color: #444;
+  flex-basis: 100%;
+  margin-bottom: 0.2rem;
 }
 
 input[type='text'] {
-  flex: 1;
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #aaa;
 }
 
 button {
@@ -44,6 +57,7 @@ button {
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.2s;
+  white-space: nowrap;
 }
 
 button:hover {
@@ -62,6 +76,7 @@ li {
   align-items: center;
   padding: 0.6rem 0.8rem;
   border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
 }
 
 li:last-child {
@@ -76,6 +91,7 @@ li:last-child {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 button.reset {
@@ -89,4 +105,36 @@ button.reset:hover {
 button:disabled {
   background-color: #aaa;
   cursor: not-allowed;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .app {
+    padding: 1rem;
+  }
+
+  form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input[type='text'],
+  button {
+    width: 100%;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  button {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (min-width: 600px) {
+  input[type='text'] {
+    flex: 1;
+  }
 }
