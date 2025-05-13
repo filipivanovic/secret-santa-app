@@ -1,8 +1,7 @@
 const App = () => {
   return (
     <div className="app">
-      <h1>Secret Santa App</h1>
-      <button className={`button`}>Pick</button>
+      <h1>🎅 Secret Santa Planner</h1>
     </div>
   )
 }
