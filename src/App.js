@@ -6,8 +6,12 @@ const participants = [
   { id: '5', name: 'Lois' }
 ]
 
-const Button = () => {
-  return <button>Add</button>
+const Button = ({ children, onClick }) => {
+  return (
+    <button onClick={onClick} className="button">
+      {children}
+    </button>
+  )
 }
 
 const App = () => {
@@ -16,7 +20,10 @@ const App = () => {
       <h1>🎅 Secret Santa Planner</h1>
       <ParticipantForm />
       <ParticipantList />
-      {/*<Button>🎁 Assign Gifts</Button>*/}
+      <div className="button-panel">
+        <button className={`assign`}>🎁 Assign Gifts</button>
+        <button className="reset">🔄 Reset All</button>
+      </div>
       <AssignmentsDisplay />
     </div>
   )

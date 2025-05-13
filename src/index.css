@@ -96,15 +96,37 @@ li:last-child {
 
 button.reset {
   background-color: #555;
+  background: transparent;
+  color: #555;
+  border: 1px solid #555;
 }
 
 button.reset:hover {
   background-color: #333;
 }
 
+button.assign {
+  border: 1px solid #a00000;
+  background: transparent;
+  color: #a00000;
+}
+
 button:disabled {
   background-color: #aaa;
   cursor: not-allowed;
+}
+
+.button-panel {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.button-panel button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
 }
 
 /* Responsive tweaks */
