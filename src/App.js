@@ -63,6 +63,11 @@ const App = () => {
     return null
   }
 
+  const handleReset = () => {
+    setParticipants(defaultParticipants)
+    setAssignments({})
+  }
+
   return (
     <div className="app">
       <h1>🎅 Secret Santa Planner</h1>
@@ -72,7 +77,9 @@ const App = () => {
         <button onClick={handleAssignGifts} className="assign">
           🎁 Assign Gifts
         </button>
-        <button className="reset">🔄 Reset All</button>
+        <button onClick={handleReset} className="reset">
+          🔄 Reset All
+        </button>
       </div>
       <AssignmentsDisplay assignments={assignments} />
     </div>
