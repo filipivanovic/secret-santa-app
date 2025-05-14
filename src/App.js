@@ -55,9 +55,9 @@ const App = () => {
         for (let i = 0; i < givers.length; i++) {
           result[givers[i].name] = receivers[i].name
         }
+        toast.success('Assignments created successfully!')
         return result
       }
-      toast.success('Assignments created successfully!')
       attempt++
     }
 
