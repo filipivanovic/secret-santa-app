@@ -17,7 +17,7 @@ const Button = ({ children, onClick }) => {
 }
 
 const App = () => {
-  const [participants, setParticipants] = useState(defaultParticipants)
+  const [participants, setParticipants] = useState([])
   const [assignments, setAssignments] = useState({})
 
   const handleAddParticipant = participant => {
@@ -64,7 +64,7 @@ const App = () => {
   }
 
   const handleReset = () => {
-    setParticipants(defaultParticipants)
+    setParticipants([])
     setAssignments({})
   }
 
@@ -75,7 +75,7 @@ const App = () => {
       <ParticipantList participants={participants} />
       <div className="button-panel">
         <button onClick={handleAssignGifts} className="assign">
-          🪄 Assign Gifts
+          🎁 Assign Gifts
         </button>
         <button onClick={handleReset} className="reset">
           🔄 Reset All
