@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const defaultParticipants = [
   { id: '1', name: 'Clark' },
@@ -31,7 +33,7 @@ const App = () => {
 
   const assignGifts = participants => {
     if (participants.length < 2) {
-      alert('At least 2 participants are required.')
+      toast.error('At least 2 participants are required.')
       return null
     }
 
@@ -55,11 +57,11 @@ const App = () => {
         }
         return result
       }
-
+      toast.success('Assignments created successfully!')
       attempt++
     }
 
-    alert('Failed to generate valid assignments. Please try again.')
+    toast.error('Failed to generate valid assignments. Please try again.')
     return null
   }
 
@@ -82,6 +84,7 @@ const App = () => {
         </button>
       </div>
       <AssignmentsDisplay assignments={assignments} />
+      <ToastContainer position="top-center" />
     </div>
   )
 }
