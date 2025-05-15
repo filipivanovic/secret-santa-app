@@ -2,13 +2,13 @@ import { useState } from 'react'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-const defaultParticipants = [
-  { id: '1', name: 'Clark' },
-  { id: '2', name: 'Diana' },
-  { id: '3', name: 'Bruce' },
-  { id: '4', name: 'Barry' },
-  { id: '5', name: 'Lois' }
-]
+// const defaultParticipants = [
+//   { id: '1', name: 'Clark' },
+//   { id: '2', name: 'Diana' },
+//   { id: '3', name: 'Bruce' },
+//   { id: '4', name: 'Barry' },
+//   { id: '5', name: 'Lois' }
+// ]
 
 const Button = ({ children, onClick }) => {
   return (
